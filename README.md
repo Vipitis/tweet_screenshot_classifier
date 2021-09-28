@@ -4,17 +4,19 @@ currently private! classifies OCR output from tweet screenshots.
 ## requirements
 * [pytesseract](github.com/madmaze/pytesseract)
 * [TweetCapture](github.com/Xacnio/tweetcapture)
+* twitter API access (for generating and annotating screensshots)
 
 #### modules (pip install):
+* requests 
 * sklearn
 * pandas
 * Pillow
 
 ## usage
-setup the config.yaml with your local paths
-run inference.py with an image path and get a search link back (CLI implemnted)
-run training.py to train the model (CLI interface not available)
-run screenshot_handling to generate and annotate more data (CLI interface not available)
+setup the config.yaml with your local paths and bearer token
+1. run inference.py with an image path and get a search link back (CLI implemnted)
+2. run screenshot_handling to generate and annotate more data (CLI interface not available)
+3. run training.py to train the model (CLI interface not available)
 
 ## license
 MIT
