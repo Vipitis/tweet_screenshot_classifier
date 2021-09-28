@@ -1,10 +1,6 @@
 tessearct_path: "C:\\Program Files\\Tesseract-OCR\\tesseract"
-tweets_path: "D:\\Dokumente\\Uni_OFFLINE\\SS2021\\NLP\\project\\tweets\\"
-captures_path: "D://Dokumente//Uni_OFFLINE//SS2021//NLP//project//tweetcaptures/"
-model_path: "D://Dokumente//Uni_OFFLINE//SS2021//NLP//project//first_model.pickle"
-
+captures_path: "project//tweetcaptures/"
+model_path: "project//first_model.pickle"
 lang: "en"
 # twitter tokens:
-bearer_token: "AAAAAAAAAAAAAAAAAAAAAMVKSQEAAAAA1wRr69TiL2Xo05domqbHnt9jIX0%3DqBYu1BkW1C11mtdjnmE2nEMt8JiKhwktABM0wbLX8fVXack9rZ"
- 
- 
+bearer_token: "" # input your own if you want to generate any training data yourself.
