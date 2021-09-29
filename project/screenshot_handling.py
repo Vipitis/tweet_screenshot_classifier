@@ -95,7 +95,7 @@ def main():
     
     # generate_tests(5)
 
-    print("main executed")
+    print("screenshot_handling executed")
 
 
 if __name__ == "__main__":
