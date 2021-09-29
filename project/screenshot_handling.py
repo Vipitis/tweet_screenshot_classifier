@@ -5,21 +5,20 @@ import asyncio
 import json
 import yaml
 from pathlib import Path
-from twitter_tools import get_tweet_link, sample_stream_ids, tweet_lookup, load_lookup,save_lookup
+from twitter_tools import get_tweet_link,sample_stream_ids,tweet_lookup,load_lookup,save_lookup
 from OCR_csv import OCR_and_augment,save_OCR,load_OCR
-
 
 
 def generate_screenshots(tweet_ids,path):
     """
     generates tweet screenshots
     
-    Params:
+    args:
         tweet_ids (list): list of int tweet_ids
         path (str): directory where to save screensshots at.
 
-    Returns: 
-        nothing?
+    returns: 
+        None
     """
     # print(tweet_ids)
     for tweet_id in tweet_ids:
@@ -44,31 +43,30 @@ def print_info(directory):
     return 
 
 def generate_tests(amount):
-    tests_path = "D:\\Dokumente\\Uni_OFFLINE\\SS2021\\NLP\\project\\tests\\"
+    """
+    generates a specified amount of screenshots in the tests_path directory
+    """
     generate_screenshots(sample_stream_ids(amount),tests_path)
+    return
 
 def annotate_tweet(OCR_data,lookup_data):
     """
-    takes OCR_data and lookup_data from a tweet screenshots and annotates new rows.
+    takes OCR_data and lookup_data from a tweet screenshots and annotates new rows   
     """
 
-    # annotated_OCR = OCR_data.copy()
     #annotated is_name?
-    OCR_data["is_name"] = OCR_data["text"].dropna().isin(lookup_data["includes"]["users"][0]["name"].split()).astype(int) # this annotates is_name?
+    OCR_data["is_name"] = OCR_data["text"].dropna().isin(lookup_data["includes"]["users"][0]["name"].split()).astype(int) 
         
     #annotate is_author
-    OCR_data["is_author"] = (OCR_data["text"].str.lstrip("@") == lookup_data["includes"]["users"][0]["username"]).astype(int) # this annotates is_author...
+    OCR_data["is_author"] = (OCR_data["text"].str.lstrip("@") == lookup_data["includes"]["users"][0]["username"]).astype(int) 
         
     #annotate is_text
-    OCR_data["is_text"] = OCR_data["text"].dropna().isin(lookup_data["data"][0]["text"].split()).astype(int) #this annotates is_text to some degree, might need a pop or a cleanup from start to end.
+    OCR_data["is_text"] = OCR_data["text"].dropna().isin(lookup_data["data"][0]["text"].split()).astype(int)
     
-    #annotated is_time?
+    #annotated is_time missing
 
     #annotated is_source
-    OCR_data["is_source"] = OCR_data["text"].dropna().isin(lookup_data["data"][0]["source"].split()).astype(int) #this annotates is_text to some degree, might need a pop or a cleanup from start to end.
-    
-    #cleanup?
-
+    OCR_data["is_source"] = OCR_data["text"].dropna().isin(lookup_data["data"][0]["source"].split()).astype(int) 
 
     return OCR_data
 
@@ -107,6 +105,7 @@ if __name__ == "__main__":
         config_info = yaml.safe_load(config_file.read())
 
     captures_path = config_info["captures_path"]
+    tests_path = config_info["tests_path"]
     lang = config_info["lang"]
 
     #init TweetCapture module    
