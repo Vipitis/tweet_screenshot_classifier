@@ -3,7 +3,7 @@ currently private! classifies OCR output from tweet screenshots.
 
 ## requirements
 * [pytesseract](github.com/madmaze/pytesseract)
-* [TweetCapture](github.com/Xacnio/tweetcapture)
+* [TweetCapture](github.com/Xacnio/tweetcapture) (and it's requirements)
 * twitter API access (for generating and annotating screensshots)
 
 #### modules (pip install):
