@@ -1,6 +1,7 @@
 tessearct_path: "C:\\Program Files\\Tesseract-OCR\\tesseract"
 captures_path: "project//tweetcaptures/"
 model_path: "project//first_model.pickle"
+tests_path: "project\\tests\\"
 lang: "en"
 # twitter tokens:
 bearer_token: "" # input your own if you want to generate any training data yourself.
