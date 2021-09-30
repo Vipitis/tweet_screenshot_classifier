@@ -33,4 +33,4 @@ optional arguments:
 4. run training.py to train the model (CLI not available)
 
 ## license
-MIT
+[MIT](LICENSE)
