@@ -1,5 +1,5 @@
 # tweet_screenshot_classifier
-currently private! classifies OCR output from tweet screenshots.
+classifies OCR output of tweet screenshots to search for tweets 
 
 ## requirements
 * [pytesseract](github.com/madmaze/pytesseract)
